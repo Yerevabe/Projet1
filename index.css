@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: auto;
+    height: 100px;
+    background-color:rgb(120, 16, 168) ;
+    text-align: right;
+}
+
+/* Styles par défaut (ordinateur) */
+nav {
+    position: relative; /* Position normale pour le menu horizontal */
+    text-align: right; /* Aligne le menu à droite */
+    background-color: transparent; /* Pas de fond pour le menu horizontal */
+    padding: 10px 20px;
+}
+
+nav ul {
+    display: flex; /* Affiche les liens sur une seule ligne */
+    justify-content: flex-end; /* Aligne les liens à droite */
+    list-style: none; /* Supprime les puces */
+    padding: 30px;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 10px; /* Ajoute un espacement entre les liens */
+}
+
+nav ul li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: rgb(197, 197, 197); /* Couleur des liens */
+    font-weight: bold;
+    font-size: 20px;
+}
+.menu-toggle{
+    display: none;
+}
+
+
+/* Styles pour la sidebar (mobile) */
+@media (max-width: 768px) {
+    nav {
+        position: fixed; /* Fixe la sidebar sur le côté gauche */
+        top: 0;
+        left: -350px; /* Cache la sidebar en dehors de l'écran */
+        width: 250px;
+        height: 100%; /* Prend toute la hauteur de l'écran */
+        background-color: rgb(110, 14, 148); /* Couleur de fond de la sidebar */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Ombre pour un effet visuel */
+        transition: left 0.3s ease; /* Animation pour l'ouverture/fermeture */
+        padding-top: 20px;
+        z-index: 1000; /* Assure que la sidebar est au-dessus des autres éléments */
+    }
+
+    nav ul {
+        flex-direction: column; /* Empile les liens verticalement */
+        justify-content: flex-start; /* Aligne les liens en haut */
+    }
+
+    nav ul li {
+        padding: 15px 20px; /* Ajoute un espacement vertical */
+    }
+
+    .menu-toggle {
+        display: block; /* Affiche le bouton pour ouvrir la sidebar */
+        font-size: 24px;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1100; /* Assure que le bouton est au-dessus de la sidebar */
+        background-color: rgb(166, 78, 238);
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        color: white;
+    }
+
+    nav.show {
+        left: 0; /* Fait apparaître la sidebar */
+    }
+}
