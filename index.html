@@ -1,1 +1,32 @@
-!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <span class="menu-toggle">☰</span> <!-- Bouton pour ouvrir la sidebar -->
+        <nav>
+            <ul>
+                <li><a href="">Produits</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Catalogue</a></li>
+                <li><a href="">Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.querySelector(".menu-toggle");
+            const nav = document.querySelector("nav");
+
+            toggle.addEventListener("click", function () {
+                nav.classList.toggle("show"); // Ajoute ou supprime la classe "show"
+            });
+        });
+    </script>
+</body>
+</html>
